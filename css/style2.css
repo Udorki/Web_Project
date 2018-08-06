@@ -1,0 +1,56 @@
+#cuerpo {
+  background-color: pink;
+  text-align: justify;
+  color: inherit;
+}
+
+hr.hr-class {
+  border: 1px dashed black;
+}
+
+#religion {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#shinsho{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Cristianismo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Judaismo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Shinshu{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Fe{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Islam{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#myScrollspy {
+  position: fixed;
+  margin-top: 50px;
+}

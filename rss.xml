@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Prueba RSS</title>
+    <link>http://www.micanal.com</link>
+    <description>Este es un canal para probar RSS.</description>
+    <item>
+      <title>Las palmas ganó</title>
+      <link>http://www.micanal.com</link>
+      <description>UD Las Palmas</description>
+    </item>
+    <item>
+      <title>Las palmas ganó</title>
+      <link>http://www.micanal.com</link>
+      <description>UD Las Palmas</description>
+    </item>
+  </channel>
+</rss>

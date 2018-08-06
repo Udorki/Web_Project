@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat para opiniones</title>
+  <link rel="icon" href="img/icono.png">
+  <link rel="stylesheet" href="css/style5.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/chat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBbDqTdzg-X6FSavY9H62-vj1fRvnLC6eo",
+    authDomain: "prueba1-a9862.firebaseapp.com",
+    databaseURL: "https://prueba1-a9862.firebaseio.com",
+    projectId: "prueba1-a9862",
+    storageBucket: "prueba1-a9862.appspot.com",
+    messagingSenderId: "718565446934"
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="50" id="cuerpo">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid" id="color">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Cultura japonesa</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav" id="letras">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="vestimentas.html">Vestimenta
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="vestimentas.html#tradicional">Tradicional</a></li>
+              <li><a href="vestimentas.html#moderna">Moderna</a></li>
+              <li><a href="vestimentas.html#lolitas">"Lolitas"</a></li>
+              <li><a href="vestimentas.html#cosplay">"Cosplay"</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="tradiciones.html">Tradiciones
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="tradiciones.html#gastronomia">Gastronomía</a></li>
+              <li><a href="tradiciones.html#arte">Arte</a></li>
+              <li><a href="tradiciones.html#culturapopular">Cultura popular</a></li>
+              <li><a href="tradiciones.html#deporte">Deporte</a></li>
+              <li><a href="tradiciones.html#medios">Medios de comunicación</a></li>
+            </ul>
+          </li>
+          <li><a href="religion.html">Religión</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="festivales.html">Festivales
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="festivales.html#seijin">"Seijin shiki"</a></li>
+              <li><a href="festivales.html#hina">"Hinamatsuri"</a></li>
+              <li><a href="festivales.html#hana">"Hanami"</a></li>
+              <li><a href="festivales.html#tanabata">"Tanabata"</a></li>
+              <li><a href="festivales.html#sichi">"Shichi-Go-San"</a></li>
+              <li><a href="festivales.html#omino">"Ōmisoka"</a></li>
+            </ul>
+          </li>
+          <li><a href="juego.html">Quiz</a></li>
+          <li><a href="chat.html">Chat</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <input id="txtEmail" type="email" placeholder="Email">
+    <input id="txtPassword" type="password" placeholder="Contraseña">
+    <button id="btnLogin" class="btn btn-action">Entrar</button>
+    <button id="btnSignUp" class="btn btn-secondary">Registrarse</button>
+    <button id="btnLogout" class="btn btn-action hide">Salir</button>
+    <p id="errorMessage"></p>
+  </div>
+  <div class="container hide" id="chat">
+    <div class="row">
+      <h1 id="titulo">Opiniones sobre Japón y su cultura</h1>
+      <p id="advertencia">Respeta a los demás si quieres que te respeten a ti, gracias.</p>
+      <hr class="hr-class">
+    </div>
+    <div class="row">
+      <div class="col-sm-5">
+        <form id="formulario" action="index.html" method="post">
+          <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje:</label>
+            <textarea class="form-control" id="message" name="message"></textarea>
+          </div>
+          <button type="submit" name="button" id="submit">Agregar</button>
+        </form>
+      </div>
+      <div class="col-sm-7" id="mensaje">
+        <!--Aquí van los mensajes-->
+      </div>
+    </div>
+  </div>
+</body>
+</html>

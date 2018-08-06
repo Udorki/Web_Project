@@ -1,0 +1,39 @@
+#cuerpo {
+  background-color: pink;
+  text-align: justify;
+  color: inherit;
+}
+
+#Japon {
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#Sello {
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#texto {
+  font-size: 120%;
+}
+
+#Jardin {
+  display: block;
+  float: right;
+  margin-left: 15px;
+}
+
+#Cultura h2{
+  font-weight: bold;
+}
+
+#Cultura a {
+  font-style: normal;
+}

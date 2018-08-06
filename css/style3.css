@@ -1,0 +1,56 @@
+#cuerpo {
+  background-color: pink;
+  text-align: justify;
+  color: inherit;
+}
+
+hr.hr-class {
+  border: 1px dashed black;
+}
+
+#gastronomia {
+  color: black;
+  background-color: inherit;
+}
+
+#arte {
+  color: black;
+  background-color: inherit;
+}
+
+#culturapopular {
+  color: black;
+  background-color: inherit;
+}
+
+#deporte {
+  color: black;
+  background-color: inherit;
+}
+
+#medios {
+  color: black;
+  background-color: inherit;
+}
+
+#caligrafia {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Ghibli {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Kanagawa {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#myScrollspy {
+  position: fixed;
+}

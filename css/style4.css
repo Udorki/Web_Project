@@ -1,0 +1,88 @@
+#cuerpo {
+  background-color: pink;
+  text-align: justify;
+  color: inherit;
+}
+
+hr.hr-class {
+  border: 1px dashed black;
+}
+
+#tradicional {
+  color: black;
+  background-color: inherit;
+}
+
+#moderna {
+  color: black;
+  background-color: inherit;
+}
+
+#lolitas {
+  color: black;
+  background-color: inherit;
+}
+
+#cosplay {
+  color: black;
+  background-color: inherit;
+}
+
+#hakama {
+  color: black;
+  background-color: white;
+}
+
+#jinbei {
+  color: black;
+  background-color: white;
+}
+
+#keikogi {
+  color: black;
+  background-color: white;
+}
+
+#kimono {
+  color: black;
+  background-color: white;
+}
+
+#yukata {
+  color: black;
+  background-color: white;
+}
+
+#gothic {
+  color: red;
+  background-color: inherit;
+}
+
+#sweet {
+  color: red;
+  background-color: inherit;
+}
+
+#classic {
+  color: red;
+  background-color: inherit;
+}
+
+#hime {
+  color: red;
+  background-color: inherit;
+}
+
+#sailor {
+  color: red;
+  background-color: inherit;
+}
+
+#qi {
+  color: red;
+  background-color: inherit;
+}
+
+#myScrollspy{
+  position: fixed;
+}

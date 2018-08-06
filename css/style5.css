@@ -1,0 +1,83 @@
+#cuerpo {
+  background-color: pink;
+  text-align: justify;
+  color: inherit;
+}
+
+hr.hr-class {
+  border: 1px dashed black;
+}
+
+#seijin {
+  color: black;
+  background-color: inherit;
+}
+
+#hina {
+  color: black;
+  background-color: inherit;
+}
+
+#hana {
+  color: black;
+  background-color: inherit;
+}
+
+#tanabata {
+  color: black;
+  background-color: inherit;
+}
+
+#sichi {
+  color: black;
+  background-color: inherit;
+}
+
+#omino {
+  color: black;
+  background-color: inherit;
+}
+
+.gallery {
+  text-align: center;
+}
+
+#Sheijin{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Hinamatsuri{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Sichi {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hanami {
+  text-align: center;
+}
+
+#Omisoka {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#myScrollspy {
+  position: fixed;
+}
+
+#titulo{
+  text-align: center;
+}
+
+#advertencia{
+  text-align: center;
+}

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Quiz</title>
+  <link rel="icon" href="img/icono.png">
+  <script src="js/juego.js"></script>
+  <link rel="stylesheet" href="css/style6.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBbDqTdzg-X6FSavY9H62-vj1fRvnLC6eo",
+      authDomain: "prueba1-a9862.firebaseapp.com",
+      databaseURL: "https://prueba1-a9862.firebaseio.com",
+      projectId: "prueba1-a9862",
+      storageBucket: "prueba1-a9862.appspot.com",
+      messagingSenderId: "718565446934"
+    };
+    firebase.initializeApp(config);
+  </script>
+</head>
+<body id="cuerpo">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid" id="color">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Cultura japonesa</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav" id="letras">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="vestimentas.html">Vestimenta
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="vestimentas.html#tradicional">Tradicional</a></li>
+              <li><a href="vestimentas.html#moderna">Moderna</a></li>
+              <li><a href="vestimentas.html#lolitas">"Lolitas"</a></li>
+              <li><a href="vestimentas.html#cosplay">"Cosplay"</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="tradiciones.html">Tradiciones
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="tradiciones.html#gastronomia">Gastronomía</a></li>
+              <li><a href="tradiciones.html#arte">Arte</a></li>
+              <li><a href="tradiciones.html#culturapopular">Cultura popular</a></li>
+              <li><a href="tradiciones.html#deporte">Deporte</a></li>
+              <li><a href="tradiciones.html#medios">Medios de comunicación</a></li>
+            </ul>
+          </li>
+          <li><a href="religion.html">Religión</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="festivales.html">Festivales
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="festivales.html#seijin">"Seijin shiki"</a></li>
+              <li><a href="festivales.html#hina">"Hinamatsuri"</a></li>
+              <li><a href="festivales.html#hana">"Hanami"</a></li>
+              <li><a href="festivales.html#tanabata">"Tanabata"</a></li>
+              <li><a href="festivales.html#sichi">"Shichi-Go-San"</a></li>
+              <li><a href="festivales.html#omino">"Ōmisoka"</a></li>
+            </ul>
+          </li>
+          <li><a href="juego.html">Quiz</a></li>
+          <li><a href="chat.html">Chat</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <h1 id="titulo">¿Que has aprendido sobre Japón?</h1>
+  <div class="container">
+    <div class="row">
+      <input class="btn-warning button" type="button" name="button" value="Cambiar paneles" id="cambioPanel">
+      <p id="canal">Canal rss</p>
+      <img src="img/owlrss.png" alt="Búho" id="rss" />
+    </div>
+  </div>
+  <hr>
+  <div class="container" id="contenedor">
+    <form class="form-inline form-horizontal" id="quiz" action="juego.html">
+      <div class="form-group" id="identificador">
+        <label for="name">Introduzca su nombre:</label>
+        <input type="text" class="form-control" id="name" name="name" value="" placeholder="Nombre">
+        <span id="obligatorio"></span>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <h5 class="pregunta" id="Pregunta1">¿A que continente pertenece Japón?</h5>
+            <span id="obligatorio1"></span>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-2">
+              <label><input type="radio" name="Pregunta1" value="Asia">Asia</label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="radio" name="Pregunta1" value="Africa">África</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <label><input type="radio" name="Pregunta1" value="Europa">Europa</label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="radio" name="Pregunta1" value="America">América</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <h5 class="pregunta" id="Pregunta2">¿Cuál es el sello oficial de Japón?</h5>
+            <span id="obligatorio2"></span>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-2">
+              <label><input type="radio" name="Pregunta2" value="Correcta"><img class="img-responsive" src="img/Sello1.png" alt="Sello" /></label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="radio" name="Pregunta2"  value="Falso"><img class="img-responsive" src="img/Sello2.png" alt="Sello" /></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <label><input type="radio" name="Pregunta2" value="Falso"><img class="img-responsive" src="img/Sello3.png" alt="Sello" /></label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="radio" name="Pregunta2" value="Falso"><img class="img-responsive" src="img/Sello4.png" alt="Sello" /></label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <h5 class="pregunta" id="Pregunta3">¿Cómo se conoce a Japón?</h5>
+            <span id="obligatorio3"></span>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <label><input type="radio" name="Pregunta3" value="Falso">La Tierra del Sol Creciente</label>
+            </div>
+            <div class="col-sm-3">
+              <label><input type="radio" name="Pregunta3" value="Falso">La Tierra del Sol Poniente</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <label><input type="radio" name="Pregunta3" value="Correcta">La Tierra del Sol Naciente</label>
+            </div>
+            <div class="col-sm-3">
+              <label><input type="radio" name="Pregunta3" value="Falso">La Tierra del Sol Saliente</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <h5 class="pregunta">¿Cuál de estas imágenes son prendas tradicionales japonesas?</h5>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-4">
+              <label><input type="checkbox" name="checkbox" value="Falso"><img class="img-responsive" src="img/Prenda.jpg" alt="Ropa" /></label>
+            </div>
+            <div class="col-sm-4">
+              <label><input type="checkbox" name="checkbox1" value="Correcta"><img class="img-responsive" src="img/Prenda1.jpg" alt="Prenda" /></label>
+            </div>
+            <div class="col-sm-4">
+              <label><input type="checkbox" name="checkbox2" value="Correcta"><img class="img-responsive" src="img/Prenda2.jpg" alt="Prenda" /></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <label><input type="checkbox" name="checkbox" value="Falso"><img class="img-responsive" src="img/Prenda3.jpg" alt="Prenda" /></label>
+            </div>
+            <div class="col-sm-4">
+              <label><input type="checkbox" name="checkbox3" value="Correcta"><img class="img-responsive" src="img/Prenda4.jpg" alt="Prenda" /></label>
+            </div>
+            <div class="col-sm-4">
+              <label><input type="checkbox" name="checkbox4" value="Correcta"><img class="img-responsive" src="img/Prenda5.jpg" alt="Prenda" /></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <label><input type="checkbox" name="checkbox" value="Falso"><img class="img-responsive" src="img/Prenda6.jpg" alt="Prenda" /></label>
+            </div>
+            <div class="col-sm-4">
+              <label><input type="checkbox" name="checkbox" value="Falso"><img class="img-responsive" src="img/Prenda7.jpg" alt="Prenda" /></label>
+            </div>
+            <div class="col-sm-4">
+              <label><input type="checkbox" name="checkbox5" value="Correcta"><img class="img-responsive" src="img/Prenda8.jpg" alt="Prenda" /></label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <h5 class="pregunta" id="Pregunta4">¿Que son las "lolitas"?</h5>
+            <span id="obligatorio4"></span>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <label><input type="radio" name="Pregunta5" value="Falso">Subcultura japonesa que mezcla corrientes juveniles con estéticas de la edad media y de siglos pasados.</label>
+            </div>
+            <div class="col-sm-6">
+              <label><input type="radio" name="Pregunta5" value="Falso">Subcultura popular que utilizan sobretodo las mujeres, donde se visten como niñas menores de edad.</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <label><input type="radio" name="Pregunta5" value="Falso">Cultura japonesa extendida donde las mujeres utilizan ropa relacionada con épocas pasadas y simulando a niñas.</label>
+            </div>
+            <div class="col-sm-6">
+              <label><input type="radio" name="Pregunta5" value="Correcta">Subcultura japonesa que mezcla corrientes juveniles con vestimentas de la aristocracia del siglo pasado o estilos similares.</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <h5 class="pregunta" id="Pregunta5">¿En que consiste el "Cosplay"?</h5>
+            <span id="obligatorio5"></span>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <label><input type="radio" name="Pregunta6" value="Falso">Se trata de vestirse o disfrazarse de manera similar a un personaje ficticio de alguna serie, película o videojuego.</label>
+            </div>
+            <div class="col-sm-6">
+              <label><input type="radio" name="Pregunta6" value="Falso">Se trata de ataviarse con accesorios que lleva un personaje ficticio de alguna serie, película o videojuego.</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <label><input type="radio" name="Pregunta6" value="Correcta">Se trata de vestirse y actuar, de manera que parezca una especie de juego, como un personaje ficticio de series, películas o videojuegos.</label>
+            </div>
+            <div class="col-sm-6">
+              <label><input type="radio" name="Pregunta6" value="Falso">Se trata de actuar, realizando un papel, como un personaje ficticio de una serie, película o videojuego.</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <h5 class="pregunta">¿Cuál de estos platos son típicos de Japón?</h5>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox1_1">Ramen</label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox">Chow Mein</label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox">Won Ton</label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox2_1">Onigiri</label>
+            </div>
+            <div class="col-sm-3">
+              <label><input type="checkbox" name="checkbox">Nam Prik Pao</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox3_1">Shushi</label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox">Ped Dang</label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox4_1">Bento</label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox5_1">Takoyaki</label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox6_1">Gohan</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <h5 class="pregunta">¿Cuáles de estas frases son verdaderas en relación al arte japonés?</h5>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <label><input type="checkbox" name="checkbox">El Ukiyo-e es sobre lienzo y la pintura japonesa solo sobre piezas de madera.</label>
+            </div>
+            <div class="col-sm-6">
+              <label><input type="checkbox" name="checkbox1_2">El Ikebana consiste en el arte con plantas y la pintura japonesa sobre lienzo.</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <label><input type="checkbox" name="checkbox2_2">El Ukiyo-e se hace exclusivamente sobre piezas de madera, mientras que la pintura japonesa no.</label>
+            </div>
+            <div class="col-sm-6">
+              <label><input type="checkbox" name="checkbox3_2">Los tres son un tipo de arte japonés(Ikebana, pintura y Ukiyo-e).</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <label><input type="checkbox" name="checkbox4_2">La pintura japonesa es más moderna que el Ukiyo-e.</label>
+            </div>
+            <div class="col-sm-6">
+              <label><input type="checkbox" name="checkbox">El Ikebana y el Ukiyo-e ya no se realizan en la actualidad, mientras que la pintura japonesa si.</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <h5 class="pregunta" id="Pregunta6">¿Como se llama el estudio de anime más famoso de Japón?</h5>
+            <span id="obligatorio6"></span>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <label><input type="radio" name="Pregunta9" value="Falso">Estudios Gibli</label>
+            </div>
+            <div class="col-sm-3">
+              <label><input type="radio" name="Pregunta9" value="Falso">Estudios Henzo</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <label><input type="radio" name="Pregunta9" value="Correcta">Estudios Ghibli</label>
+            </div>
+            <div class="col-sm-3">
+              <label><input type="radio" name="Pregunta9" value="Falso">Estudios Giblhi</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <h5 class="pregunta">¿Cuáles de estas religiones se practican en Japón?</h5>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox1_3">Shinto</label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox2_3">Judaísmo</label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox">Yoruba</label>
+            </div>
+            <div class="col-sm-3">
+              <label><input type="checkbox" name="checkbox3_3">Cristianismo</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox4_3">Fe Bahá'í</label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox">Jainismo</label>
+            </div>
+            <div class="col-sm-2">
+              <label><input type="checkbox" name="checkbox5_3">Budismo</label>
+            </div>
+            <div class="col-sm-3">
+              <label><input type="checkbox" name="checkbox">Neopaganismo</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <h5 class="pregunta" id="Pregunta7">¿En que consiste el Hanami?</h5>
+            <span id="obligatorio7"></span>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-5">
+              <label><input type="radio" name="Pregunta11" value="Falso">Celebran la caída de las flores de cerezo.</label>
+            </div>
+            <div class="col-sm-5">
+              <label><input type="radio" name="Pregunta11" value="Correcta">Se realizan excursiones y picnics por la caída de las flores de cerezo.</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-5">
+              <label><input type="radio" name="Pregunta11" value="Falso">Se celebra en otoño, por la caída de las flores.</label>
+            </div>
+            <div class="col-sm-5">
+              <label><input type="radio" name="Pregunta11" value="Falso">Recogen flores de cerezo para que den buena suerte.</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <h5 class="pregunta" id="Pregunta8">¿En honor a quién se realiza el Tanabata?</h5>
+            <span id="obligatorio8"></span>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <label><input type="radio" name="Pregunta12" value="Falso">Adela y Altair</label>
+            </div>
+            <div class="col-sm-3">
+              <label><input type="radio" name="Pregunta12" value="Falso">Vega y Altaifa</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <label><input type="radio" name="Pregunta12" value="Correcta">Vega y Altair</label>
+            </div>
+            <div class="col-sm-3">
+              <label><input type="radio" name="Pregunta12" value="Falso">Vegoña y Alfonso</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <h5 class="pregunta">Ordena los festivales según las fechas:</h5>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row"  id="Pregunta9">
+            <label>3 de Marzo:</label>
+            <select class="" name="Pregunta13">
+              <option value="Vacio">--------------</option>
+              <option value="Falso">Tanabata</option>
+              <option value="Falso">Sheijin Shiki</option>
+              <option value="Falso">Ōmisoka</option>
+              <option value="Falso">Hanami</option>
+              <option value="Correcta">Hinamatsuri</option>
+              <option value="Falso">Shichi-Go-San</option>
+            </select>
+            <span id="obligatorio9"></span>
+          </div><br />
+          <div class="row"  id="Pregunta10">
+            <label>1 de abril y 2 de abril:</label>
+            <select class="" name="Pregunta14">
+              <option value="Vacio">--------------</option>
+              <option value="Falso">Ōmisoka</option>
+              <option value="Falso">Hinamatsuri</option>
+              <option value="Falso">Hanami</option>
+              <option value="Correcta">Sheijin Shiki</option>
+              <option value="Falso">Tanabata</option>
+              <option value="Falso">Shichi-Go-San</option>
+            </select>
+            <span id="obligatorio10"></span>
+          </div><br />
+          <div class="row"  id="Pregunta11">
+            <label>Abril:</label>
+            <select class="" name="Pregunta15">
+              <option value="Vacio">--------------</option>
+              <option value="Falso">Ōmisoka</option>
+              <option value="Falso">Sheijin Shiki</option>
+              <option value="Falso">Shichi-Go-San</option>
+              <option value="Falso">Hinamatsuri</option>
+              <option value="Falso">Tanabata</option>
+              <option value="Correcta">Hanami</option>
+            </select>
+            <span id="obligatorio11"></span>
+          </div><br />
+          <div class="row"  id="Pregunta12">
+            <label>7 de Julio:</label>
+            <select class="" name="Pregunta16">
+              <option value="Vacio">--------------</option>
+              <option value="Correcta">Tanabata</option>
+              <option value="Falso">Hinamatsuri</option>
+              <option value="Falso">Shichi-Go-San</option>
+              <option value="Falso">Hanami</option>
+              <option value="Falso">Sheijin Shiki</option>
+              <option value="Falso">Ōmisoka</option>
+            </select>
+            <span id="obligatorio12"></span>
+          </div><br />
+          <div class="row"  id="Pregunta13">
+            <label>15 de Noviembre:</label>
+            <select class="" name="Pregunta17">
+              <option value="Vacio">--------------</option>
+              <option value="Falso">Tanabata</option>
+              <option value="Falso">Hinamatsuri</option>
+              <option value="Falso">Sheijin Shiki</option>
+              <option value="Correcta">Shichi-Go-San</option>
+              <option value="Falso">Hanami</option>
+              <option value="Falso">Ōmisoka</option>
+            </select>
+            <span id="obligatorio13"></span>
+          </div><br />
+          <div class="row"  id="Pregunta14">
+            <label>31 de Diciembre:</label>
+            <select class="" name="Pregunta18">
+              <option value="Vacio">--------------</option>
+              <option value="Falso">Shichi-Go-San</option>
+              <option value="Falso">Hanami</option>
+              <option value="Falso">Hinamatsuri</option>
+              <option value="Correcta">Ōmisoka</option>
+              <option value="Falso">Sheijin Shiki</option>
+              <option value="Falso">Tanabata</option>
+            </select>
+            <span id="obligatorio14"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <input class="btn-success button" type="submit" name="button"  value="Comprobar" id="comprobar" />
+        <input class="btn-danger button" type="reset" name="button" value="Resetear" id="resetear" />
+      </div><br />
+      <div class="container" id="despues">
+        <div class="row">
+          <div class="col-sm-6">
+            <h1 id="mensaje"></h1>
+            <p id="correctas"></p>
+          </div>
+          <div class="col-sm-6">
+            <h1 id="mensaje_malo"></h1>
+            <p id="erroneas"></p>
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive hide" id="table">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Pregunta 1</th>
+              <th>Pregunta 2</th>
+              <th>Pregunta 3</th>
+              <th>Pregunta 4</th>
+              <th>Pregunta 5</th>
+              <th>Pregunta 6</th>
+              <th>Pregunta 7</th>
+              <th>Pregunta 8</th>
+              <th>Pregunta 9</th>
+              <th>Pregunta 10</th>
+              <th>Pregunta 11</th>
+              <th>Pregunta 12</th>
+              <th>Pregunta 13</th>
+              <th>Pregunta 14</th>
+              <th>Pregunta 15</th>
+              <th>Pregunta 16</th>
+              <th>Pregunta 17</th>
+              <th>Pregunta 18</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
+    </form>
+  </div>
+</body>
+</html>

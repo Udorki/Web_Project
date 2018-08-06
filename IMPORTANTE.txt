@@ -1,0 +1,7 @@
+He agregado el canal rss en el juego, donde guarda las respuestas correctas de cada usuario.
+
+Luego, sigue habiendo chat (porque prefería agregar a quitar cosas) porque en el chat ahora necesitas loguearte para poder escribir, leer y hacer el CRUD completo, los usuarios son los siguientes.
+
+Usuario normal: kevin@hotmail.com con contraseña kevin1
+
+Usuario admin: admin@hotmail.com con contraseña admin1.

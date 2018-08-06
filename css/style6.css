@@ -1,0 +1,42 @@
+#cuerpo {
+  background-color: pink;
+  text-align: justify;
+  color: inherit;
+}
+
+#titulo {
+  text-align: center;
+}
+
+.button {
+  margin: 10px;
+  box-shadow: 5px 5px 3px grey;
+}
+
+h5.pregunta {
+  color: purple;
+  background-color: inherit;
+  font-weight: bold;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+label {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+#rss{
+  width: 70px;
+  height: 70px;
+  display: block;
+  margin-left: auto;
+}
+
+#canal{
+  text-align: right;
+}
+
+#identificador{
+  margin-bottom: 1%;
+}
